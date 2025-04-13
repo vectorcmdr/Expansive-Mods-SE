@@ -3,7 +3,7 @@
 <!-- PROJECT HEADER -->
 <br />
 <div align="center">
-  <a href="https://github.com/lottehime/Expansive-Mods-SE">
+  <a href="https://github.com/vectorcmdr/Expansive-Mods-SE">
     <img src="images/thumb_banner.png" alt="Logo">
   </a>
 
@@ -12,9 +12,9 @@
   <p align="center">
     A <b><i>backwards compatible</i></b> Space Engineers mod pack to add QoL improvements and features in the style of <strong>THE EXPANSE</strong>!
     <br><br />
-    <a href="https://github.com/lottehime/Expansive-Mods-SE/issues">Report A Bug 💥</a>
+    <a href="https://github.com/vectorcmdr/Expansive-Mods-SE/issues">Report A Bug 💥</a>
     ·
-    <a href="https://github.com/lottehime/Expansive-Mods-SE/issues">Request A Feature 🚀</a>
+    <a href="https://github.com/vectorcmdr/Expansive-Mods-SE/issues">Request A Feature 🚀</a>
   </p>
 </div>
 
@@ -22,15 +22,15 @@
 
 [![Contributors][contributors-shield]][contributors-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] 
 
-[contributors-shield]: https://img.shields.io/github/contributors/lottehime/Expansive-Mods-SE.svg?style=for-the-badge
-[contributors-url]: https://github.com/lottehime/Expansive-Mods-SE/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/lottehime/Expansive-Mods-SE.svg?style=for-the-badge
-[stars-url]: https://github.com/lottehime/Expansive-Mods-SE/stargazers
-[issues-shield]: https://img.shields.io/github/issues/lottehime/Expansive-Mods-SE.svg?style=for-the-badge
-[issues-url]: https://github.com/lottehime/Expansive-Mods-SE/issues
+[contributors-shield]: https://img.shields.io/github/contributors/vectorcmdr/Expansive-Mods-SE.svg?style=for-the-badge
+[contributors-url]: https://github.com/vectorcmdr/Expansive-Mods-SE/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/vectorcmdr/Expansive-Mods-SE.svg?style=for-the-badge
+[stars-url]: https://github.com/vectorcmdr/Expansive-Mods-SE/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vectorcmdr/Expansive-Mods-SE.svg?style=for-the-badge
+[issues-url]: https://github.com/vectorcmdr/Expansive-Mods-SE/issues
 <!--
-[license-shield]: https://img.shields.io/github/license/lottehime/Expansive-Mods-SE.svg?style=for-the-badge
-[license-url]: https://github.com/lottehime/Expansive-Mods-SE/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/vectorcmdr/Expansive-Mods-SE.svg?style=for-the-badge
+[license-url]: https://github.com/vectorcmdr/Expansive-Mods-SE/blob/master/LICENSE.txt
 -->
 
 </div>
@@ -222,7 +222,7 @@ ExpansiveEnvPlanetaryDamage
 - [ ] Add ability to turn individual features on and off in a config file
 
 
-See the [open issues](https://github.com/lottehime/Expansive-Mods-SE/issues) for additional community proposed features (and known issues).
+See the [open issues](https://github.com/vectorcmdr/Expansive-Mods-SE/issues) for additional community proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -238,7 +238,7 @@ _To install manually instead of from the Steam Workshop:_
 1. Download a zip of the repo and unpack it; <strong>or</strong>
 2. Clone the repo
    ```sh
-   git clone https://github.com/lottehime/Expansive-Mods-SE.git
+   git clone https://github.com/vectorcmdr/Expansive-Mods-SE.git
    ```
 3. Copy the 'ExpansiveMods' folder from within the 'Combined' folder from the repo into your Space Engineers Mods folder location:
    ```
@@ -271,7 +271,7 @@ _Copy the individual mod parts from the 'Mods' folder from the repo into your Sp
 <!-- BUY ME A COFFEE -->
 ## Help Support More Like This
 
-<a href="https://www.buymeacoffee.com/lottehime" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/vectorcmdr" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -303,9 +303,9 @@ Distributed under the Creative Commons Attribution-NonCommercial-ShareAlike Lice
 <!-- CONTACT -->
 ## Contact
 
-<a href="#"><img src="https://cdn.simpleicons.org/twitter/1D9BF0" height="16"/></a> [@lotte_hime](https://twitter.com/lotte_hime)
+<a href="#"><img src="https://cdn.simpleicons.org/x/000000" height="16"/></a> [@vector_cmdr](https://twitter.com/vector)cmdr)
 
-<a href="#"><img src="https://cdn.simpleicons.org/github/181717" height="16"/></a> [https://github.com/lottehime/Expansive-Mods-SE](https://github.com/lottehime/Expansive-Mods-SE)
+<a href="#"><img src="https://cdn.simpleicons.org/github/181717" height="16"/></a> [https://github.com/vectorcmdr/Expansive-Mods-SE](https://github.com/vectorcmdr/Expansive-Mods-SE)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
