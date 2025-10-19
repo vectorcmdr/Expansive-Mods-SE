@@ -226,8 +226,14 @@ void StartBraking(IMyShipController reference)
 
     if (brakingAngle * rad2deg <= brakingAngleTolerance)
     {
-        if (!reference.DampenersOverride)
+        if (!reference.DampenersOverride){
             reference.DampenersOverride = true;
+        }
+
+        foreach (IMyGravityGenerator thisGravity in gravity)
+        {
+            thisGravity.Enabled = true;
+        }
     }
     else
     {
@@ -246,14 +252,6 @@ void StopBraking()
     foreach (IMyGyro thisGyro in gyros)
     {
         thisGyro.SetValue("Override", false);
-    }
-
-    var gravity = new List<IMyGravityGenerator>();
-    GridTerminalSystem.GetBlocksOfType(gravity); //messy fix later 
-
-    foreach (IMyGravityGenerator thisGravity in gravity)
-    {
-        thisGravity.Enabled = true;
     }
 
     hasBraked = false;
