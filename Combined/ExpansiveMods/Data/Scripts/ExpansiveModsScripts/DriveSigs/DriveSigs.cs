@@ -40,6 +40,7 @@ namespace Expansive.DriveSigs
         IMyTerminalBlock Beacon;
         IMyBeacon BeaconBlock = null;
         private IMyCubeGrid CubeGrid = null;
+        List<IMyGravityGenerator> gravity = new List<IMyGravityGenerator>();
 
         private float GetBeaconRange()
         {
@@ -213,6 +214,28 @@ namespace Expansive.DriveSigs
                     return false;
                 }
             });
+
+            var seat = new List<IMyShipController>();
+            gridTerm.GetBlocksOfType(seat);
+            gravity = new List<IMyGravityGenerator>();
+            gridTerm.GetBlocksOfType(gravity);
+
+            if (seat.Count != 0 && gravity.Count != 0)
+            {
+
+                foreach (IMyGravityGenerator thisGravity in gravity)
+                {
+                    if(seat[0].Orientation == thisGravity.Orientation){
+                        thisGravity.GravityAcceleration = (float)seat[0].GetShipSpeed() / 10;
+                    }
+                    else{
+                        var invNum = (float)seat[0].GetShipSpeed() / 10;
+                        invNum = invNum * -1;
+                        thisGravity.GravityAcceleration = invNum;
+                    }
+                    
+                }
+            }
 
             if (powerProviders.Count != 0 || thrustProducers.Count != 0 || heatRadiators.Count != 0 || commsAntennae.Count !=0)
             {
