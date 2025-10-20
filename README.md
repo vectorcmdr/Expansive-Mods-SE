@@ -55,7 +55,7 @@
 <!-- ABOUT -->
 ## About Expansive Mods
 
-⚠️WIP!⚠️
+### ⚠️WIP!⚠️
 
 Expansive Mods aims to add gameplay elements to Space Engineers in the style of THE EXPANSE, while allowing ship blueprints and saves to be backwards compatible if you decide to revert to base gameplay.
 
@@ -74,7 +74,7 @@ There are lots of THE EXPANSE style mods, why another?
 <!-- FEATURES -->
 ## Features
 
-### Thrust & Systems
+### Thrust, Gravity & Systems
 <details>
   <summary>Mods & Features</summary>
 
@@ -106,6 +106,14 @@ ExpansiveThrustDriveSigs
 * Large thrusters placed / built in a direction other than forward are disabled.
 * Large thrusters (main drives) are turned off at init for safety.
 
+#### 4. Speed Based Gravity Generators:
+```
+ExpansiveThrustDriveSigs (part of the drives mod)
+```
+* Grid speed determines Gravity Generator strength.
+* Adding "+" to the Grav Gen block custom name makes gravity values positive.
+* Adding "^" to the Grav Gen block custom name makes gravity values negative.
+* Opt out of this system by not adding "+" or "^" to the Grav Gen block custom name.
 </details>
 
 ### Weapons
@@ -152,6 +160,7 @@ ExpansiveUtilCleanupWarning
 ```
 ExpansiveUtilFactions
 ```
+*No ships are currently implemented, only the faction groups. May use the new spawn system instead of something like MES in the future.*
 * NPC factions based on THE EXPANSE are added to the save:
   * MCRN
   * UNN
@@ -180,6 +189,7 @@ ExpansiveEnvWeldFix
 ```
 ExpansiveDisableLightningDamage
 ```
+*This may be removed in the future in favor of the new SE weather system.*
 * Base game lightning looks neat, but it works poorly. Lightning damage is disabled because of this.
 
 #### 11. Smooth Planet Details:
@@ -193,6 +203,8 @@ ExpansiveEnvSmoothPlanetDetails
 ```
 ExpansiveEnvPlanetaryDamage
 ```
+*Not currently implemented on default planets. This is a system for future Solar System additions.
+May be reworked to use the new radiation system.*
 * WIP. Intended to integrate with Sol System mod component. May be split into two parts.
 * Allows for planets to be added to the code so that they have the script enabled.
 * Planets with the script enabled will display a warning as a grid approaches them.
@@ -207,19 +219,19 @@ ExpansiveEnvPlanetaryDamage
 <!-- ROADMAP -->
 ## Roadmap
 
+### Planned:
 - [X] Add merge script for single mod publishing
 - [X] Publish initial version to Steam Workshop
+- [X] Add thrust/speed based gravity gens for ships
 - [ ] Add themed ship blueprints
+
+### Wishlist:
+- [ ] Add ability to turn individual features on and off in a config file
 - [ ] Add mod for better hostile ship takeover vs. base game
 - [ ] Add Sol system planets 
 - [ ] Add Sol system sandbox save files
 - [ ] Update Planetary Damage mod for Sol system
-- [ ] Add default Torch server config and additional mod/plugin list
-- [ ] Add themed MES mod for each factions ships
-    - [ ] Faction ship blueprints
-    - [ ] Faction comms dialogue (text)
-    - [ ] Faction comms dialogue (audio)
-- [ ] Add ability to turn individual features on and off in a config file
+- [ ] Add themed MES / new spawn system mod for each factions ships
 
 
 See the [open issues](https://github.com/vectorcmdr/Expansive-Mods-SE/issues) for additional community proposed features (and known issues).
@@ -304,9 +316,15 @@ Distributed under the Creative Commons Attribution-NonCommercial-ShareAlike Lice
 <!-- CONTACT -->
 ## Contact
 
-<a href="#"><img src="https://cdn.simpleicons.org/x/000000" height="16"/></a> [@vector_cmdr](https://twitter.com/vector)
+<a href="#"><img src="https://cdn.simpleicons.org/reddit/FF4500" height="16"/></a> [ Reddit: @vector_cmdr](https://twitter.com/vector)
 
-<a href="#"><img src="https://cdn.simpleicons.org/github/181717" height="16"/></a> [https://github.com/vectorcmdr/Expansive-Mods-SE](https://github.com/vectorcmdr/Expansive-Mods-SE)
+<a href="#"><img src="https://cdn.simpleicons.org/github/808080" height="16"/></a> [ GitHub: @vectorcmdr](https://github.com/vectorcmdr)
+
+<a href="#"><img src="https://cdn.simpleicons.org/github/808080" height="16"/></a> [ GitHub Project: Expansive-Mods-SE](https://github.com/vectorcmdr/Expansive-Mods-SE)
+
+<a href="#"><img src="https://cdn.simpleicons.org/googlecloud/FF4500" height="16"/></a> [ Website: @vector_cmdr](https://vectorcmdr.xyz)
+
+<a href="#"><img src="https://cdn.simpleicons.org/x/808080" height="16"/></a> [ X/Twitter: @vector_cmdr](https://twitter.com/vector)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
