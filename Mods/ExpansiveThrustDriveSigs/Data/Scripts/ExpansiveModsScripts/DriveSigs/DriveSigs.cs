@@ -118,6 +118,33 @@ namespace Expansive.DriveSigs
                 rawThrustOutput *= 0.25d;
             }
 
+            CubeGrid = block.CubeGrid;
+            var gridTerm = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(CubeGrid);
+            
+            var seat = new List<IMyShipController>();
+            gridTerm.GetBlocksOfType(seat);
+            var gravity = new List<IMyGravityGenerator>();
+            gridTerm.GetBlocksOfType(gravity);
+            
+            if (seat.Count != 0 && gravity.Count != 0)
+            {
+                foreach (IMyGravityGenerator thisGravity in gravity)
+                {
+                    var myString = thisGravity.CustomName;
+                    for (int i = 0; i < myString.Length; i++)
+                    {
+                        if (myString[i].ToString() == "+")
+                        {
+                            thisGravity.GravityAcceleration = (float)seat[0].GetShipSpeed() / 10;
+                        }
+                        else if (myString[i].ToString() == "^")
+                        {
+                            thisGravity.GravityAcceleration = ((float)seat[0].GetShipSpeed() / 10) * -1;
+                        }
+                    }
+                }
+            }
+
             return (float)rawThrustOutput;
         }
 
@@ -214,28 +241,6 @@ namespace Expansive.DriveSigs
                     return false;
                 }
             });
-
-            var seat = new List<IMyShipController>();
-            gridTerm.GetBlocksOfType(seat);
-            gravity = new List<IMyGravityGenerator>();
-            gridTerm.GetBlocksOfType(gravity);
-
-            if (seat.Count != 0 && gravity.Count != 0)
-            {
-
-                foreach (IMyGravityGenerator thisGravity in gravity)
-                {
-                    if(seat[0].Orientation == thisGravity.Orientation){
-                        thisGravity.GravityAcceleration = (float)seat[0].GetShipSpeed() / 10;
-                    }
-                    else{
-                        var invNum = (float)seat[0].GetShipSpeed() / 10;
-                        invNum = invNum * -1;
-                        thisGravity.GravityAcceleration = invNum;
-                    }
-                    
-                }
-            }
 
             if (powerProviders.Count != 0 || thrustProducers.Count != 0 || heatRadiators.Count != 0 || commsAntennae.Count !=0)
             {
