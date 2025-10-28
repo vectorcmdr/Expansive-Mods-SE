@@ -226,7 +226,7 @@ May be reworked to use the new radiation system.*
 - [ ] Add themed ship blueprints
 
 ### Wishlist:
-- [ ] Add ability to turn individual features on and off in a config file
+- [X] Add ability to turn individual features on and off (added via splitting mods out)
 - [ ] Add mod for better hostile ship takeover vs. base game
 - [ ] Add Sol system planets 
 - [ ] Add Sol system sandbox save files
