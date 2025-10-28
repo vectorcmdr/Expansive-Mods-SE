@@ -62,7 +62,7 @@ namespace Expansive.DriveSigs
                         var thrusterName = thruster.BlockDefinition.SubtypeId.ToString();
                         int divisor;
 
-                        if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial")
+                        if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial" || thrusterName == "LargeBlockPrototechThruster")
                             divisor = 600;
 
                         else if (thrusterName == "LargeBlockLargeThrust" || thrusterName == "LargeBlockLargeThrustSciFi" || thrusterName == "LargeBlockLargeModularThruster")
@@ -74,7 +74,7 @@ namespace Expansive.DriveSigs
                         else if (thrusterName == "LargeBlockSmallThrust" || thrusterName == "LargeBlockSmallThrustSciFi" || thrusterName == "LargeBlockSmallModularThruster")
                             divisor = 4000;
 
-                        else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial")
+                        else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial" || thrusterName == "SmallBlockPrototechThruster")
                             divisor = 1200;
 
                         else if (thrusterName == "SmallBlockLargeThrust" || thrusterName == "SmallBlockLargeThrustSciFi" || thrusterName == "SmallBlockLargeModularThruster")
@@ -88,27 +88,6 @@ namespace Expansive.DriveSigs
 
                         else divisor = 6000;
                         rawThrustOutput += thruster.CurrentThrust / divisor;
-
-                        if (thruster.Enabled && thruster.GridThrustDirection != Vector3I.Zero && thruster.GridThrustDirection != Vector3I.Backward)
-                        {
-                            if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial")
-                                thruster.Enabled = false;
-
-                            else if (thrusterName == "LargeBlockLargeThrust" || thrusterName == "LargeBlockLargeThrustSciFi" || thrusterName == "LargeBlockLargeModularThruster")
-                                thruster.Enabled = false;
-
-                            else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial")
-                                thruster.Enabled = false;
-
-                            else if (thrusterName == "SmallBlockLargeThrust" || thrusterName == "SmallBlockLargeThrustSciFi" || thrusterName == "SmallBlockLargeModularThruster")
-                                thruster.Enabled = false;  
-                            else;
-                        }
-
-                        //if(rawThrustOutput!=0)
-                        //{
-                        //  //PostDebugNotif(rawThrustOutput.ToString());
-                        //}
                     }
                 }
             }
@@ -116,33 +95,6 @@ namespace Expansive.DriveSigs
             if (block.CubeGrid.IsStatic)
             {
                 rawThrustOutput *= 0.25d;
-            }
-
-            CubeGrid = block.CubeGrid;
-            var gridTerm = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(CubeGrid);
-            
-            var seat = new List<IMyShipController>();
-            gridTerm.GetBlocksOfType(seat);
-            var gravity = new List<IMyGravityGenerator>();
-            gridTerm.GetBlocksOfType(gravity);
-            
-            if (seat.Count != 0 && gravity.Count != 0)
-            {
-                foreach (IMyGravityGenerator thisGravity in gravity)
-                {
-                    var myString = thisGravity.CustomName;
-                    for (int i = 0; i < myString.Length; i++)
-                    {
-                        if (myString[i].ToString() == "+")
-                        {
-                            thisGravity.GravityAcceleration = (float)seat[0].GetShipSpeed() / 10;
-                        }
-                        else if (myString[i].ToString() == "^")
-                        {
-                            thisGravity.GravityAcceleration = ((float)seat[0].GetShipSpeed() / 10) * -1;
-                        }
-                    }
-                }
             }
 
             return (float)rawThrustOutput;

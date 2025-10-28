@@ -1,12 +1,9 @@
 //
 // PLEASE NOTE!
 //
-// THIS IS JUST WHIP'S CODE WITH THE ADDITION OF A STATE CHECK
-// FOR IF A BRAKING ACTION HAS OCCURED AS WELL AS THE ADDITION OF DISABLING
-// GRAV GENS DURING THE BRAKING ACTION. I WILL MAKE FURTHER EDITS AND GET
-// APPROVAL BEFORE UPLOAD TO THE WORKSHOP.
-//
-// THIS IS CURRENTLY ONLY FOR MY PERSONAL USE ONLY!
+// THIS IS Whiplash141's RETRO BRAKING CODE WITH ADDED SUPPORT FOR
+// TOGGLING GRAV GENS DURING FLIP (FOR BASIC GRAV SIM).
+// ALL CREDIT FOR RETRO BRAKING COMPONENT OBVIOUSLY GOES TO Whiplash141.
 //
 
 /*
@@ -169,7 +166,7 @@ void GetThrusters(IMyShipController reference)
 {   
     mainThrust.Clear();
 
-    foreach (IMyThrust thrust in allThrust)                                                                                                                                                                          ///w.h-i*p
+    foreach (IMyThrust thrust in allThrust)
     {
         if (thrust.WorldMatrix.Backward == reference.WorldMatrix.Forward)
         {
@@ -195,32 +192,21 @@ void StartBraking(IMyShipController reference)
 
     double yawAngle = 0, pitchAngle = 0;
     GetRotationAngles(-velocityVec, reference.WorldMatrix, out yawAngle, out pitchAngle);
-
-    //double yawSpeed = proportionalConstant * yawAngle + Math.Abs(Math.Sign(yawAngle)) * derivativeConstant * (yawAngle - lastYawAngle) / timeCurrentCycle;
-    //double pitchSpeed = proportionalConstant * pitchAngle + Math.Abs(Math.Sign(pitchAngle)) * derivativeConstant * (pitchAngle - lastPitchAngle) / timeCurrentCycle;
-    
-    //double yawSpeed = MathHelper.Clamp(proportionalConstant * yawAngle * timeCurrentCycle, -Math.Abs(yawAngle) * 2, Math.Abs(yawAngle) * 2);
-    //double pitchSpeed = MathHelper.Clamp(proportionalConstant * pitchAngle * timeCurrentCycle, -Math.Abs(pitchAngle) * 2, Math.Abs(pitchAngle) * 2);
-
-    //double yawSpeed = yawPid.Control(yawAngle);
-    //double pitchSpeed = pitchPid.Control(pitchAngle);
     
     double yawSpeed = yawAngle * updatesPerSecond * rotationConstant;
     double pitchSpeed = pitchAngle * updatesPerSecond * rotationConstant;
-    
-    // Scales the rotation speed to be constant regardless od number of gyros
-    //yawSpeed /= gyros.Count;
-    //pitchSpeed /= gyros.Count;
 
     ApplyGyroOverride(pitchSpeed, yawSpeed, 0, gyros, reference);
 
+    // vector_cmdr gravity gen toggle component - 25/10/25
     var gravity = new List<IMyGravityGenerator>();
-    GridTerminalSystem.GetBlocksOfType(gravity); //messy fix later    
+    GridTerminalSystem.GetBlocksOfType(gravity);   
 
     foreach (IMyGravityGenerator thisGravity in gravity)
     {
         thisGravity.Enabled = false;
     }
+    //-------------------------------------------------//
 
     double brakingAngle = VectorMath.AngleBetween(forwardVec, -velocityVec);
 
@@ -255,14 +241,6 @@ void StopBraking()
     }
 
     hasBraked = false;
-}
-
-void ApplyThrustOverride(List<IMyThrust> thrusterList, float thrustOverride = 0)
-{
-    foreach (IMyThrust thisThrust in thrusterList)
-    {
-        thisThrust.SetValueFloat("Override", thrustOverride);
-    }
 }
 
 //Whip's ApplyGyroOverride Method v10 - 8/19/17

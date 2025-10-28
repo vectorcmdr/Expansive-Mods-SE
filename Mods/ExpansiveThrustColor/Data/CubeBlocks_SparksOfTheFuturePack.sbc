@@ -389,7 +389,7 @@
             <DamagedSound>ParticleWeapExpl</DamagedSound>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <PCU>15</PCU>
+            <PCU>12</PCU>
             <DLC>SparksOfTheFuture</DLC>
             <TargetingGroups>
                 <string>Propulsion</string>
