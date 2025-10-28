@@ -62,7 +62,7 @@ namespace Expansive.DriveSigs
                         var thrusterName = thruster.BlockDefinition.SubtypeId.ToString();
                         int divisor;
 
-                        if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial")
+                        if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial" || thrusterName == "LargeBlockPrototechThruster")
                             divisor = 600;
 
                         else if (thrusterName == "LargeBlockLargeThrust" || thrusterName == "LargeBlockLargeThrustSciFi" || thrusterName == "LargeBlockLargeModularThruster")
@@ -77,7 +77,7 @@ namespace Expansive.DriveSigs
                         else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial")
                             divisor = 1200;
 
-                        else if (thrusterName == "SmallBlockLargeThrust" || thrusterName == "SmallBlockLargeThrustSciFi" || thrusterName == "SmallBlockLargeModularThruster")
+                        else if (thrusterName == "SmallBlockLargeThrust" || thrusterName == "SmallBlockLargeThrustSciFi" || thrusterName == "SmallBlockLargeModularThruster" || thrusterName == "SmallBlockPrototechThruster")
                             divisor = 1400;
 
                         else if (thrusterName == "SmallBlockSmallHydrogenThrust" || thrusterName == "SmallBlockSmallHydrogenThrustIndustrial")
@@ -91,13 +91,13 @@ namespace Expansive.DriveSigs
 
                         if (thruster.Enabled && thruster.GridThrustDirection != Vector3I.Zero && thruster.GridThrustDirection != Vector3I.Backward)
                         {
-                            if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial")
+                            if (thrusterName == "LargeBlockLargeHydrogenThrust" || thrusterName == "LargeBlockLargeHydrogenThrustIndustrial" || thrusterName == "LargeBlockPrototechThruster")
                                 thruster.Enabled = false;
 
                             else if (thrusterName == "LargeBlockLargeThrust" || thrusterName == "LargeBlockLargeThrustSciFi" || thrusterName == "LargeBlockLargeModularThruster")
                                 thruster.Enabled = false;
 
-                            else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial")
+                            else if (thrusterName == "SmallBlockLargeHydrogenThrust" || thrusterName == "SmallBlockLargeHydrogenThrustIndustrial" || thrusterName == "SmallBlockPrototechThruster")
                                 thruster.Enabled = false;
 
                             else if (thrusterName == "SmallBlockLargeThrust" || thrusterName == "SmallBlockLargeThrustSciFi" || thrusterName == "SmallBlockLargeModularThruster")
