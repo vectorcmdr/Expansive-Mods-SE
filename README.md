@@ -35,7 +35,7 @@
 
 </div>
 
-# [Grab it from the Steam Workshop!](https://steamcommunity.com/sharedfiles/filedetails/?id=3002953565)
+# [👉 Grab it from the Steam Workshop!](https://steamcommunity.com/sharedfiles/filedetails/?id=3002953565)
 
 <!-- TABLE OF CONTENTS -->
 <details>
