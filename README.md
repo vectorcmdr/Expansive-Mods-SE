@@ -318,15 +318,13 @@ Distributed under the Creative Commons Attribution-NonCommercial-ShareAlike Lice
 <!-- CONTACT -->
 ## Contact
 
-<a href="#"><img src="https://cdn.simpleicons.org/reddit/FF4500" height="16"/></a> [ Reddit: @vector_cmdr](https://twitter.com/vector)
+<a href="#"><img src="https://cdn.simpleicons.org/reddit/FF4500" height="16"/></a> [ Reddit: u/vector_cmdr](https://www.reddit.com/user/vector_cmdr/)
 
 <a href="#"><img src="https://cdn.simpleicons.org/github/808080" height="16"/></a> [ GitHub: @vectorcmdr](https://github.com/vectorcmdr)
 
 <a href="#"><img src="https://cdn.simpleicons.org/github/808080" height="16"/></a> [ GitHub Project: Expansive-Mods-SE](https://github.com/vectorcmdr/Expansive-Mods-SE)
 
-<a href="#"><img src="https://cdn.simpleicons.org/googlecloud/FF4500" height="16"/></a> [ Website: @vector_cmdr](https://vectorcmdr.xyz)
-
-<a href="#"><img src="https://cdn.simpleicons.org/x/808080" height="16"/></a> [ X/Twitter: @vector_cmdr](https://twitter.com/vector)
+<a href="#"><img src="https://cdn.simpleicons.org/googlecloud/FF4500" height="16"/></a> [ Website: vectorcmdr.xyz](https://vectorcmdr.xyz)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
